@@ -99,6 +99,8 @@ If you'd like flymake to be activated automatically, add the following to
 
     (add-hook 'find-file-hook 'flymake-find-file-hook)
 
+See the ``flymake-customizations.el`` file for a more advanced set of
+customizations and keybindings.
 
 Configuration
 =============
@@ -150,8 +152,20 @@ List of configuration options
 ``IGNORE_CODES`` (default: ``(``))
     error codes to ignore (in addition to sane defaults)
 
+``IGNORE_CODES_PYLINT`` (default: ``(``))
+    error codes to ignore in PyLint
+
+``IGNORE_CODES_PYCHECKER`` (default: ``(``))
+    error codes to ignore in PyChecker
+
+``IGNORE_CODES_PEP8`` (default: ``(``))
+    error codes to ignore in Pep8
+
+``IGNORE_CODES_PYFLAKES`` (default: ``(``))
+    error codes to ignore in PyFlakes
+
 ``USE_SANE_DEFAULTS`` (default: ``True``)
-    ignore the following error codes in PyLint: 
+    ignore the following error codes in PyLint:
 
     * ``C0103`` Naming convention
     * ``C0111`` Missing Docstring
@@ -218,7 +232,7 @@ Here's an example configuration::
     # run unit tests only up to the first failure when buffer is saved
     if TRIGGER_TYPE == 'save':
         TEST_RUNNER_FLAGS.append('-x')
-        
+
     # run PyLint on open, save and forced-checks
     PYLINT = TRIGGER_TYPE != 'edit'
 
@@ -226,3 +240,10 @@ Here's an example configuration::
     if TRIGGER_TYPE == 'force':
         USE_SANE_DEFAULTS = False
         IGNORE_CODES = ()
+
+Donations
+---------
+
+If you'd like to support ongoing development of this tool,
+feel free to send a Bitcoin tip to
+1Pq1Y6AJjhL3rjGYW7CNKX2vhw4yDo3qdV
